@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Python
+__pycache__/
+*.pyc
+
+# 本地凭据 / 配置（绝不可提交）
+*.keychain
+credentials.json
+.zhsub/
+
+# 构建产物（可由 build.sh 重新生成）
+iina-plugin/*.iinaplgz
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,32 @@
+{
+  "name": "中文字幕下载（OpenSubtitles）",
+  "description": "为当前视频搜索并下载中文字幕（简体+繁体）。凭据在插件偏好设置中填写，不内置账号。",
+  "identifier": "com.wangxiaogang.zhsub",
+  "version": "1.4.0",
+  "author": {
+    "name": "zqtbread",
+    "url": "https://github.com/zqtbread/zhsub"
+  },
+  "entry": "entry.js",
+  "apiVersion": "1.0",
+  "permissions": [
+    "network-request",
+    "file-system",
+    "show-osd"
+  ],
+  "allowedDomains": [
+    "*"
+  ],
+  "subtitleProviders": [
+    {
+      "id": "zhsub",
+      "name": "中文字幕(OpenSubtitles)"
+    }
+  ],
+  "preferencesPage": "pref.html",
+  "preferenceDefaults": {
+    "apiKey": "",
+    "username": "",
+    "password": ""
+  }
+}

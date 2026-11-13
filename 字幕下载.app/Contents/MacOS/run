@@ -1,0 +1,25 @@
+#!/bin/bash
+# 字幕下载器启动脚本：支持「拖放视频到 app」或「双击后选文件」两种方式。
+# 脚本本体内嵌于 Contents/Resources/zhsub_downloader.py，app 自包含、可单独分发。
+SCRIPT="$(dirname "$0")/../Resources/zhsub_downloader.py"
+
+if [ -n "$1" ]; then
+    # 拖放 / 参数模式：直接使用传入的视频路径
+    for f in "$@"; do
+        /usr/bin/python3 "$SCRIPT" "$f"
+    done
+else
+    # 双击模式：弹出文件选择框（可多选）
+    mapfile -t FILES < <(osascript -e 'set chosen to choose file "选择要下载字幕的视频（可多选）" with multiple selections allowed
+set lst to {}
+repeat with f in chosen
+    set end of lst to POSIX path of f
+end repeat
+set AppleScript'"'"'s text item delimiters to linefeed
+return lst as text')
+    for f in "${FILES[@]}"; do
+        [ -n "$f" ] && /usr/bin/python3 "$SCRIPT" "$f"
+    done
+fi
+
+osascript -e 'display notification "字幕已下载到视频同目录" with title "字幕下载器"'

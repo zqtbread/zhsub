@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>中文字幕下载 设置</title>
+    <style>
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 16px; font-size: 13px;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+        .row { margin-bottom: 12px; }
+        label { display: block; margin-bottom: 4px; font-weight: 500; }
+        input { width: 100%; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; }
+        .help { font-size: 11px; color: rgba(0,0,0,0.5); margin-top: 4px; line-height: 1.5; }
+        code { background: #f0f0f0; padding: 1px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <label>OpenSubtitles API Key</label>
+        <input type="text" data-pref-key name="apiKey" placeholder="在 opensubtitles.com 账户页申请" />
+        <div class="help">OpenSubtitles v1 API 必需。也可改用 <code>setup_credentials.py</code> 写入钥匙串，与独立 app 共用。</div>
+    </div>
+    <div class="row">
+        <label>用户名</label>
+        <input type="text" data-pref-key name="username" />
+    </div>
+    <div class="row">
+        <label>密码</label>
+        <input type="password" data-pref-key name="password" />
+        <div class="help">凭据仅保存在本机（IINA preferences 或 macOS 钥匙串），不会外传。</div>
+    </div>
+</body>
+</html>
