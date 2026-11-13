@@ -28,7 +28,12 @@ python3 setup_credentials.py
 ## 三、安装
 
 ### 独立下载 app
-把 `字幕下载.app` 拖到「应用程序」文件夹。使用：
+
+**普通用户（推荐）：** 到本仓库的 [Releases](https://github.com/zqtbread/zhsub/releases) 页面下载 `zhsub-macos-app.zip`，解压即得 `字幕下载.app`，拖到「应用程序」文件夹即可。
+
+> ⚠️ 不要直接点仓库主页的 "Download ZIP" 或 clone 后用 `字幕下载.app`——那样 `.app` 内的启动脚本会丢失可执行权限，双击会报「无法打开」。请务必从 **Releases** 下载已打包好的 zip（已保留权限）。
+
+使用：
 - 双击打开 → 选择视频（可多选）；或
 - 把视频文件直接拖到 app 图标上。
 
